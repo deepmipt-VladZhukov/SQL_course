@@ -1,0 +1,2 @@
+SELECT AVG(PC.speed) 
+FROM PC

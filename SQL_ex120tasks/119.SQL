@@ -1,0 +1,18 @@
+SELECT CONVERT(VARCHAR(10), b_datetime, 126), SUM(b_vol)
+FROM utB
+GROUP BY CONVERT(VARCHAR(10), b_datetime, 126)
+HAVING COUNT(DISTINCT b_datetime) > 10
+
+UNION
+
+SELECT CONVERT(VARCHAR(7), b_datetime, 126), SUM(b_vol)
+FROM utB
+GROUP BY CONVERT(VARCHAR(7), b_datetime, 126)
+HAVING COUNT(DISTINCT b_datetime) > 10
+
+UNION
+
+SELECT CONVERT(VARCHAR(4), b_datetime, 126), SUM(b_vol)
+FROM utB
+GROUP BY CONVERT(VARCHAR(4), b_datetime, 126)
+HAVING COUNT(DISTINCT b_datetime) > 10
